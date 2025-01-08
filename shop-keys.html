@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crate Keys Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        button.purchase {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        button.purchase:hover {
+            background-color: #45a049;
+            box-shadow: 0 0 10px #45a049, 0 0 20px #45a049;
+            transform: scale(1.1);
+        }
+
+        #go-to-checkout {
+            display: none;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav button {
+            background-color: #4CAF50;
+            color: white;
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #45a049;
+            box-shadow: 0 0 10px #45a049, 0 0 20px #45a049;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><button>Home</button></a>
+            <a href="shop-keys.html"><button>CrateKeys</button></a>
+            <a href="shop-ranks.html"><button>Ranks</button></a>
+            <a href="shop-economy.html"><button>Economy</button></a>
+        </nav>
+        <h1>Crate Keys Shop</h1>
+    </header>
+
+    <main>
+        <section class="crate-keys">
+            <div class="crate-box" data-name="Universe" data-price="5" data-link="https://discord.gg/6zPCKdnVaY">
+                <h2>Universe</h2>
+                <p>$5</p>
+                <button class="purchase">Purchase</button>
+            </div>
+            <div class="crate-box" data-name="Global" data-price="4" data-link="https://discord.gg/6zPCKdnVaY">
+                <h2>Global</h2>
+                <p>$4</p>
+                <button class="purchase">Purchase</button>
+            </div>
+            <div class="crate-box" data-name="Simirik" data-price="3" data-link="https://discord.gg/6zPCKdnVaY">
+                <h2>Simirik</h2>
+                <p>$3</p>
+                <button class="purchase">Purchase</button>
+            </div>
+            <div class="crate-box" data-name="Deadliest" data-price="4" data-link="https://discord.gg/6zPCKdnVaY">
+                <h2>Deadliest</h2>
+                <p>$4</p>
+                <button class="purchase">Purchase</button>
+            </div>
+            <div class="crate-box" data-name="Common" data-price="0" data-link="https://discord.gg/6zPCKdnVaY">
+                <h2>Common</h2>
+                <p>Free (Join Our Discord and Create a Ticket)</p>
+                <button class="purchase">Purchase</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Rights Reserved. Please click On Purchase and make a ticket to buy</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        // Adding functionality to the Purchase buttons
+        const purchaseButtons = document.querySelectorAll('.purchase');
+        
+        purchaseButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const crateBox = this.closest('.crate-box');
+                const link = crateBox.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;  // Redirect to the link
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

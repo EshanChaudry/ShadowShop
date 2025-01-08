@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranks Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 1em 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 15px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .navbar a:hover {
+            color: #ffbf00;
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffbf00;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .main-content {
+            display: flex;
+            margin-top: 80px;
+            width: 100%;
+        }
+
+        .container {
+            padding: 2em 1em;
+            flex: 3;
+        }
+
+        .rank-box {
+            background: linear-gradient(135deg, #444, #222);
+            margin: 20px auto;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 10px;
+            padding: 1em;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .rank-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 20px rgba(255, 191, 0, 0.5);
+        }
+
+        .rank-name {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+            color: #ffbf00;
+        }
+
+        .price {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+
+        .purchase-btn {
+            background: #ffbf00;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .purchase-btn:hover {
+            background: #ffc733;
+        }
+
+        .image-box {
+            background: #333;
+            color: #fff;
+            border-radius: 10px;
+            padding: 1em;
+            margin: 20px;
+            width: 300px;
+            flex: 1;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .image-box img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .image-box h3 {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="shop-keys.html">Crate Keys</a>
+        <a href="shop-ranks.html">Ranks</a>
+        <a href="shop-economy.html">Economy</a>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="rank-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="rank-name">Slayer</div>
+                <div class="price">$10</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+
+            <div class="rank-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="rank-name">Deadliest</div>
+                <div class="price">$6</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+
+            <div class="rank-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="rank-name">Immortal</div>
+                <div class="price">$3</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+
+            <div class="rank-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="rank-name">Epic</div>
+                <div class="price">$1.5</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+
+            <div class="rank-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="rank-name">Fire</div>
+                <div class="price">$1</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+        </div>
+
+        <div class="image-box">
+            <h3>Gallery</h3>
+            <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+            <img src="https://via.placeholder.com/300" alt="Placeholder Image">
+        </div>
+    </div>
+
+    <script>
+        // Adding functionality to the Purchase buttons
+        const purchaseButtons = document.querySelectorAll('.purchase-btn');
+        
+        purchaseButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const rankBox = this.closest('.rank-box');
+                const link = rankBox.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;  // Redirect to the link
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

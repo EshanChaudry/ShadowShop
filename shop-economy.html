@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #2c3e50, #4ca1af);
+            color: white;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #34495e;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+
+        header a:hover {
+            color: #f1c40f;
+            text-shadow: 0 0 10px #f1c40f;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .offer-box {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #f1c40f;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .offer-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .offer-name {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #f39c12;
+        }
+
+        .purchase-btn {
+            margin-top: 15px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .purchase-btn:hover {
+            background: #c0392b;
+        }
+
+        .offers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <a href="shop-keys.html">Crate Keys</a>
+        <a href="shop-ranks.html">Ranks</a>
+        <a href="shop-economy.html">Economy</a>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to Balance Shop</h1>
+        <p>Purchase Minecraft balances and enhance your game!</p>
+
+        <div class="offers">
+            <div class="offer-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="offer-name">1B</div>
+                <div class="price">$5</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+            <div class="offer-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="offer-name">100M</div>
+                <div class="price">$3</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+            <div class="offer-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="offer-name">10M</div>
+                <div class="price">$2.5</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+            <div class="offer-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="offer-name">1M</div>
+                <div class="price">$2</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+            <div class="offer-box" data-link="https://discord.gg/6zPCKdnVaY">
+                <div class="offer-name">100K</div>
+                <div class="price">$0.5</div>
+                <button class="purchase-btn">Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Adding functionality to the Purchase buttons
+        const purchaseButtons = document.querySelectorAll('.purchase-btn');
+        
+        purchaseButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const offerBox = this.closest('.offer-box');
+                const link = offerBox.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;  // Redirect to the link
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
